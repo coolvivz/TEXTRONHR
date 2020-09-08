@@ -1,0 +1,20 @@
+ID: TXTDEMO
+_schema-version: '2.1'
+description: Info
+version: 0.0.1
+
+modules:
+ - name: HDB100
+   type: hdb
+   path: HDB100
+   requires:
+    - name: hdi_HDB100
+
+resources:
+ - name: hdi_HDB100
+   parameters:
+      config:
+         schema: DEMOFINAL
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
